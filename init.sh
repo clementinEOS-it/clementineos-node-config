@@ -33,5 +33,6 @@ sudo wget https://github.com/EOSIO/eosio.contracts/archive/v1.8.2.tar.gz
 sudo tar -xf ./v1.8.2.tar.gz
 sudo rm ./v1.8.2.tar.gz
 
-sudo rm -Rf /opt/eosio/eosio.contracts-1.8.2/build
-exec sudo /opt/eosio/eosio.contracts-1.8.2/build.sh
+cd eosio.contracts-1.8.2
+sudo rm -Rf ./build
+exec sudo ./build.sh
