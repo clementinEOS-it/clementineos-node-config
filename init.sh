@@ -22,7 +22,7 @@ then
 fi
 
 echo 'creating folders ...'  
-if [[ -d  /opt/eosio ]] && [[ -d  /opt/eosio/nodeos ]] && [[ -d  /opt/eosio/wallet ]] [[ -d  /opt/eosio/scripts ]]
+if [[ -d  /opt/eosio ]] && [[ -d  /opt/eosio/nodeos ]] && [[ -d  /opt/eosio/wallet ]] && [[ -d  /opt/eosio/scripts ]]
 then
     sudo mkdir /opt/eosio /opt/eosio/nodeos /opt/eosio/wallet /opt/eosio/scripts
     sudo mkdir /opt/eosio/nodeos/config /opt/eosio/nodeos/data
