@@ -50,4 +50,4 @@ then
     cd eosio.contracts-1.8.2
     sudo rm -Rf ./build
 fi
-exec sudo ./build.sh
+exec sudo ./build.sh -e /usr/opt/eosio/1.8.6 -c /usr/opt/eosio.cdt/1.6.3
