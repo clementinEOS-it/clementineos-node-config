@@ -1,6 +1,16 @@
 # clementineos-node-config
 Scripts and configuration files to setup eos blockchain private network
 
+## Prerequisities
+
+Server istance with this requisities: 
+
+- CentOS 8 
+- 2 CPU
+- 16 GB RAM
+
+Firewall must open port TCP **8888, 9876, 8901, 8080** to access all resource.
+
 ## Usage
 
 ```
