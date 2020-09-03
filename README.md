@@ -11,7 +11,9 @@ Server istance with this requisities:
 
 Firewall must open port TCP **8888, 9876, 8901, 8080** to access all resource.
 
-## Usage
+## Install eosio packages and contracts
+Starting with eosio *v.1.8.6* and eosio.cdt *v1.6.3* with contracts eosio.contracts *v1.8.2*.
+To compile the contracts in this release for eosio.bios and eosio.system contracts, in particular also require that the [PREACTIVATE_FEATURE](https://github.com/EOSIO/eos/pull/8328) consensus protocol upgrade has been activated on the EOSIO blockchain before they can be deployed.  
 
 ```
 cd ~
