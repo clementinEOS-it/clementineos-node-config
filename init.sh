@@ -34,4 +34,4 @@ sudo rm ./v1.8.2.tar.gz
 
 sudo mv ./eosio.contracts-1.8.2 /opt/eosio
 sudo rm -Rf /opt/eosio/eosio.contracts-1.8.2/build
-sudo /opt/eosio/eosio.contracts-1.8.2/build.sh
+exec sudo /opt/eosio/eosio.contracts-1.8.2/build.sh
