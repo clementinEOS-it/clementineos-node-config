@@ -23,3 +23,36 @@ check if nodeos starting
 tail -f /opt/eosio/nodeos/nodeos.log
 tail -f /opt/eosio/wallet/keosd.log
 ```
+
+## [Create Development Wallet](https://developers.eos.io/welcome/latest/getting-started/development-environment/create-development-wallet)
+
+```
+sudo cleos wallet create --to-console
+
+Creating wallet: default
+Save password to use in the future to unlock this wallet.
+Without password imported keys will not be retrievable.
+"PW5Jkzd92giRQfVwGkT1xHzPEr11xmP4D2cgzNoKqTHeHX2WSsiu8"
+```
+Use this *PRIVATE KEY ->* **5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3**
+
+```
+sudo cleos wallet unlock
+sudo cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+sudo cleos wallet create_key
+ Created new private key with a public key of: "EOS75aLWLrnfNQ5BsTQLfkfENhTAJsjHQvsXUv38x75j7Zz5Qf7Vm"
+```
+
+show keys created 
+```
+sudo cleos wallet private_keys
+
+password: [[
+    "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
+  ],[
+    "EOS75aLWLrnfNQ5BsTQLfkfENhTAJsjHQvsXUv38x75j7Zz5Qf7Vm",
+    "5Jux8vRGAqVVG2MD4X928396duq1UnAFKSyDcBvSGSdWSd59MVj"
+  ]
+]
+```
