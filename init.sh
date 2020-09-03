@@ -27,11 +27,11 @@ echo 'copying script files'
 sudo cp ./scripts/* /opt/eosio/scripts
 
 echo 'install and build eosio.contracts v.1.8.2'
-wget https://github.com/EOSIO/eosio.contracts/archive/v1.8.2.tar.gz
+cd /opt/eosio
+sudo wget https://github.com/EOSIO/eosio.contracts/archive/v1.8.2.tar.gz
 
 sudo tar -xf ./v1.8.2.tar.gz
 sudo rm ./v1.8.2.tar.gz
 
-sudo mv ./eosio.contracts-1.8.2 /opt/eosio
 sudo rm -Rf /opt/eosio/eosio.contracts-1.8.2/build
 exec sudo /opt/eosio/eosio.contracts-1.8.2/build.sh
