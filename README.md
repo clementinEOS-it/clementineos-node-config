@@ -1,4 +1,4 @@
-# clementineos-node-config
+# How to create private blockchain network    
 Scripts and configuration files to setup eos blockchain private network
 
 ## Prerequisities
