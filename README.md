@@ -24,6 +24,25 @@ cd clementineos-node-config
 
 ```
 
+Finish install packages when compiled eosio.contracts 
+
+```
+.....
+.....
+Warning, action <onblock> does not have a ricardian contract
+Warning, action <onblock> does not have a ricardian contract
+Warning, action <onerror> does not have a ricardian contract
+Warning, action <onblock> does not have a ricardian contract
+Warning, action <onerror> does not have a ricardian contract
+Warning, action <onblock> does not have a ricardian contract
+[100%] Linking CXX executable eosio.system.wasm
+[100%] Built target eosio.system
+[ 77%] No install step for 'contracts_project'
+[ 88%] No test step for 'contracts_project'
+[100%] Completed 'contracts_project'
+[100%] Built target contracts_project
+```
+
 ## Start nodeos
 ```
 ./start.sh
