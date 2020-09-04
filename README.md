@@ -67,11 +67,24 @@ Save password to use in the future to unlock this wallet.
 Without password imported keys will not be retrievable.
 "PW5Jkzd92giRQfVwGkT1xHzPEr11xmP4D2cgzNoKqTHeHX2WSsiu8"
 ```
-Use this *PRIVATE KEY ->* **5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3**
-
+store securely the password wallet or create file within password 
+```
+sudo cleos wallet create --file ~/wallet_password.txt
+```
+unlock the wallet with password wallet default to create account
 ```
 sudo cleos wallet unlock
+```
+
+Use this *PRIVATE DEVELOPMENT KEY ->* **5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3** to create account 
+
+```
 sudo cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+```
+
+### Create system accounts
+create first keys public/private to use with system accounts
+```
 sudo cleos wallet create_key
  Created new private key with a public key of: "EOS75aLWLrnfNQ5BsTQLfkfENhTAJsjHQvsXUv38x75j7Zz5Qf7Vm"
 ```
