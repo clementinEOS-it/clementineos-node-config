@@ -1,12 +1,11 @@
 #!/bin/bash
-DATADIR="/opt/eosio/nodeos"
 
-if [ -f $DATADIR"/eosd.pid" ]; then
-
-    pid='sudo cat $DATADIR"/eosd.pid"'
+if [[ -f /opt/eosio/nodeos/eosd.pid ]] 
+then
+    pid='sudo cat /opt/eosio/nodeos/eosd.pid'
     echo $pid
-    kill $pid
-    rm -r $DATADIR"/eosd.pid"
+    sudo kill $pid
+    sudo rm -r /opt/eosio/nodeos/eosd.pid
     echo -ne "Stopping Node ..."
     
     while true; do
