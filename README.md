@@ -79,7 +79,24 @@ Run script to create develompent wallet
 ```
 ./create_dev_wallet.sh
 ```
+
+at the end of the script execution it is necessary to save the created public key
+
+*Created new private key with a public key of:* **"EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy"**
+```
+show keys ...
+[[
+    "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
+  ],[
+    "EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy",
+    "5Hvh6ngrctkubBsmLHcoSot9T6Yn3tbdHyUvpnjDAdrtngdHxev"
+  ]
+]
+```
+
 or
+
 ### [Create Development Wallet manually](https://developers.eos.io/welcome/latest/getting-started/development-environment/create-development-wallet)
 
 ```
@@ -105,23 +122,42 @@ Use this *PRIVATE DEVELOPMENT KEY ->* **5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDey
 cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 ```
 
-### Create system accounts
-create first keys public/private to use with system accounts
+## [Create system accounts](https://developers.eos.io/welcome/latest/tutorials/bios-boot-sequence/#17-create-important-system-accounts)
+
+There are several system accounts that are needed, namely the following:
 ```
-cleos wallet create_key
- Created new private key with a public key of: "EOS75aLWLrnfNQ5BsTQLfkfENhTAJsjHQvsXUv38x75j7Zz5Qf7Vm"
+eosio.bpay
+eosio.msig
+eosio.names
+eosio.ram
+eosio.ramfee
+eosio.saving
+eosio.stake
+eosio.token
+eosio.vpay
+eosio.rex
+```
+Repeat the following steps to create an account for each of the system accounts.
+
+### Create first keys public/private to use with system accounts
+We will use the same key pair for both the account owner and active keys, so we only need to provide the key value once on the command line. For most general accounts, it is a good practice to use separate keys for owner and active. The script uses the same key for all of the eosio.* accounts. You can use different keys for each.
+
+```
+sudo cleos create account eosio eosio.bpay EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.msig EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.names EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.ram EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.ramfee EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.saving EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.stake EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.token EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.vpay EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
+sudo cleos create account eosio eosio.rex EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy 
 ```
 
-show keys created 
-```
-cleos wallet private_keys
+or
 
-password: [[
-    "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
-    "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
-  ],[
-    "EOS75aLWLrnfNQ5BsTQLfkfENhTAJsjHQvsXUv38x75j7Zz5Qf7Vm",
-    "5Jux8vRGAqVVG2MD4X928396duq1UnAFKSyDcBvSGSdWSd59MVj"
-  ]
-]
+### Run script to create system accounts
+```
+./create_system_accounts.sh EOS7uK9pnHMx4m9gRsmnLszkat2Ho7pudEUBvD6o2U9RxSyVubjKy
 ```
