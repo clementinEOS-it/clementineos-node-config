@@ -1,11 +1,11 @@
 #!/bin/bash
-DATADIR="/opt/eosio/wallet"
 
-if [ -f $DATADIR"/keosd.pid" ]; then
- pid='cat $DATADIR"/keosd.pid"'
+if [[ -f /opt/eosio/wallet/keosd.pid ]] 
+then
+ pid='cat /opt/eosio/wallet/keosd.pid'
  echo $pid
  kill $pid
- rm -r $DATADIR"/keosd.pid"
+ rm -r /opt/eosio/wallet/keosd.pid
  echo -ne "Stopping Wallet ..."
  
  while true; do
