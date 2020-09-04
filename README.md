@@ -57,10 +57,33 @@ tail -f /opt/eosio/wallet/keosd.log
 ps -aux | grep "nodeos*"
 ```
 
-## [Create Development Wallet](https://developers.eos.io/welcome/latest/getting-started/development-environment/create-development-wallet)
+### Stop nodeos and wallet
+```
+sudo /opt/eosio/scripts/nodeosd_stop.sh
+sudo /opt/eosio/scripts/keosd_stop.sh
+```
+
+### Hard replay blocks
+you can retart nodeos with options --hard-replay-blockchain or delete all blockchain and restart nodeos with scripts:
 
 ```
-sudo cleos wallet create --to-console
+sudo /opt/eosio/scripts/nodeosd_replay.sh
+```
+or
+```
+sudo /opt/eosio/scripts/nodeosd_deleteall.sh
+```
+
+## Create Development Wallet
+Run script to create develompent wallet 
+```
+./create_dev_wallet.sh
+```
+or
+### [Create Development Wallet manually](https://developers.eos.io/welcome/latest/getting-started/development-environment/create-development-wallet)
+
+```
+cleos wallet create --to-console
 
 Creating wallet: default
 Save password to use in the future to unlock this wallet.
@@ -69,29 +92,29 @@ Without password imported keys will not be retrievable.
 ```
 store securely the password wallet or create file within password 
 ```
-sudo cleos wallet create --file ~/wallet_password.txt
+cleos wallet create --file ~/wallet_password.txt
 ```
 unlock the wallet with password wallet default to create account
 ```
-sudo cleos wallet unlock
+cleos wallet unlock
 ```
 
 Use this *PRIVATE DEVELOPMENT KEY ->* **5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3** to create account 
 
 ```
-sudo cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 ```
 
 ### Create system accounts
 create first keys public/private to use with system accounts
 ```
-sudo cleos wallet create_key
+cleos wallet create_key
  Created new private key with a public key of: "EOS75aLWLrnfNQ5BsTQLfkfENhTAJsjHQvsXUv38x75j7Zz5Qf7Vm"
 ```
 
 show keys created 
 ```
-sudo cleos wallet private_keys
+cleos wallet private_keys
 
 password: [[
     "EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
