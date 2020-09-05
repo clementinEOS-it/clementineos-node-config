@@ -11,7 +11,8 @@ echo 'create development account'
 cleos wallet import --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
 echo 'create public/private keys to system accounts'
-cleos wallet create_key 2>&1 & echo $! > ~/keys.txt
+keys=$(cleos wallet create_key)
+echo $keys > ~/systemaccount_pk.txt
 
 echo 'show keys ...'
 cleos wallet private_keys --password $password
