@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ -f /opt/eosio/nodeos/eosd.pid ]] 
+then
+    ./start.sh
+fi
+
 echo 'create system account eosio.bpay'
 cleos create account eosio eosio.bpay $1
 

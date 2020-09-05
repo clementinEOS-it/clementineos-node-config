@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ -f /opt/eosio/nodeos/eosd.pid ]] 
+then
+    ./start.sh
+fi
+
 echo 'create default wallet'
 cleos wallet create --file ~/wallet_password.txt
 
