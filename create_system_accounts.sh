@@ -5,8 +5,8 @@ then
     ./start.sh
 fi
 
-echo 'create system account eosio.bpay'
-cleos create account eosio eosio.bpay $1
+echo 'create system account eosio.wrap'
+cleos create account eosio eosio.wrap $1
 
 echo 'create system account eosio.msig'
 cleos create account eosio eosio.msig $1
@@ -28,6 +28,9 @@ cleos create account eosio eosio.stake $1
 
 echo 'create system account eosio.token'
 cleos create account eosio eosio.token $1
+
+echo 'create system account eosio.bpay'
+cleos create account eosio eosio.bpay $1
 
 echo 'create system account eosio.vpay'
 cleos create account eosio eosio.vpay $1
