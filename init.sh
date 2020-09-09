@@ -22,7 +22,7 @@ then
 fi
 
 echo 'creating folders ...'  
-if [[ -d  /opt/eosio ]] && [[ -d  /opt/eosio/nodeos ]] && [[ -d  /opt/eosio/wallet ]] && [[ -d  /opt/eosio/scripts ]]
+if [[ ! -d  /opt/eosio ]] && [[ ! -d  /opt/eosio/nodeos ]] && [[ ! -d  /opt/eosio/wallet ]] && [[ ! -d  /opt/eosio/scripts ]]
 then
     sudo mkdir /opt/eosio /opt/eosio/nodeos /opt/eosio/wallet /opt/eosio/scripts
     sudo mkdir /opt/eosio/nodeos/config /opt/eosio/nodeos/data
@@ -41,7 +41,7 @@ sudo cp ./scripts/* /opt/eosio/scripts
 
 echo 'install and build eosio.contracts v.1.8.2'
 cd /opt/eosio
-if [[ -d /opt/eosio/eosio.contracts-1.8.2 ]]
+if [[ ! -d /opt/eosio/eosio.contracts-1.8.2 ]]
 then
     sudo wget https://github.com/EOSIO/eosio.contracts/archive/v1.8.2.tar.gz
     sudo tar -xf ./v1.8.2.tar.gz
