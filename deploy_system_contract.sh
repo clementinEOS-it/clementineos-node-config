@@ -12,3 +12,5 @@ cleos set contract eosio.msig ./eosio.msig
 cleos set contract eosio.wrap ./eosio.wrap
 cleos set contract eosio ./eosio.bios
 cleos set contract eosio ./eosio.system
+
+cleos push action eosio setpriv '["eosio.msig", 1]' -p eosio@active
